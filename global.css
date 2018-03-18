@@ -11,6 +11,7 @@
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: middle;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
     color: var(--maincolor);
     padding: 0px;
     margin: 0px;
+    height: 100vh;
 }
 
 a.title{
@@ -40,14 +42,21 @@ a.title:hover{
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    height: 100%;
 }
 
 .header {
     grid-column-start: 1;
     grid-column-end: 4;
+}
+
+.footer{
+    grid-column: -4/span 3;
+    background-color: var(--mainbackground);
+    padding: 10px;
 }
 
 @media only screen and (max-width: 900px){
@@ -58,6 +67,10 @@ a.title:hover{
     .header {
         grid-column-end: 3;
     }
+
+    .footer{
+        grid-column: -3/span 2;
+    }
 }
 
 @media only screen and (max-width: 500px){
@@ -67,6 +80,10 @@ a.title:hover{
 
     .header {
         grid-column-end: 2;
+    }
+
+    .footer{
+        grid-column: -2/span 1;
     }
 }
 
